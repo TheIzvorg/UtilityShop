@@ -12,11 +12,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class MenuController {
+
+    @FXML
+    private Label label_OlegUcsusName;
 
     @FXML
     private ResourceBundle resources;
@@ -103,9 +107,6 @@ public class MenuController {
         stage.show();
     }
 
-    public void fillKorzina(){
-
-    }
 
     public void goToKorzina(ActionEvent actionEvent) {
         Stage stage = (Stage) btn_Korzina.getScene().getWindow();
@@ -114,6 +115,7 @@ public class MenuController {
         Parent root1 = null;
         try {
             root1 = (Parent) fxmlLoader.load();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -121,7 +123,14 @@ public class MenuController {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Корзина");
         stage.setScene(new Scene(root1));
+
         stage.show();
+    }
+
+    public void FillProduct(int id, String productName, double productPrice, int productCount){
+        Product.name[id] = productName;
+        Product.price[id] = productPrice;
+        Product.count[id] = productCount;
     }
 
     public String Summ(String label, int number, int menuNumber){
@@ -137,10 +146,12 @@ public class MenuController {
 
     public void OlegUcsusCountDec(ActionEvent actionEvent) {
         label_OlegUcsusCount.setText(Summ(label_OlegUcsusCount.getText(),-1,0));
+        FillProduct(0,label_OlegUcsusName.getText(),100,Integer.parseInt(label_OlegUcsusCount.getText()));
     }
 
     public void OlegUcsusCountInc(ActionEvent actionEvent) {
         label_OlegUcsusCount.setText(Summ(label_OlegUcsusCount.getText(),1,0));
+        FillProduct(0,label_OlegUcsusName.getText(),100,Integer.parseInt(label_OlegUcsusCount.getText()));
     }
 
     public void BurgOlegDec(ActionEvent actionEvent) {

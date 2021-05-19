@@ -10,6 +10,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -22,6 +26,9 @@ public class Korzina {
     private URL location;
 
     @FXML
+    private GridPane Pane_Item;
+
+    @FXML
     private Button btn_Exit;
 
     @FXML
@@ -32,6 +39,14 @@ public class Korzina {
 
     @FXML
     void initialize() {
+        //fillKorzina();
+    }
+
+
+    public void fillKorzina(){
+        for(int i = 0; i < Product.name.length; i++){
+            Pane_Item.add(new Label(Product.name[i] + " - " + Product.price[i] + " * " + Product.count[i]),1,i);
+        }
     }
 
     public void goToMsgBox(ActionEvent actionEvent) {
