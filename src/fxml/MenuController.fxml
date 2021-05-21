@@ -4,12 +4,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.image.Image?>
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Classes.MenuController">
    <children>
       <AnchorPane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: ff0000;">
@@ -19,9 +19,9 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Button fx:id="btn_Exit" onAction="#Exit" layoutX="456.0" layoutY="13.0" mnemonicParsing="false" text="X" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
-            <Button fx:id="btn_LK" onAction="#goToLK" layoutX="450.0" layoutY="2.0" mnemonicParsing="false" text="LK" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="2.0" />
-            <Button fx:id="btn_Korzina" onAction="#goToKorzina" layoutX="479.0" layoutY="2.0" mnemonicParsing="false" text="Корзина" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="2.0" />
+            <Button fx:id="btn_Exit" layoutX="456.0" layoutY="13.0" mnemonicParsing="false" onAction="#Exit" text="X" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+            <Button fx:id="btn_LK" layoutX="450.0" layoutY="2.0" mnemonicParsing="false" onAction="#goToLK" text="LK" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="2.0" />
+            <Button fx:id="btn_Korzina" layoutX="479.0" layoutY="2.0" mnemonicParsing="false" onAction="#goToKorzina" text="Корзина" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="2.0" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: faebd7;">
@@ -49,12 +49,12 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <ImageView fx:id="image_BurgerOleg" fitHeight="100.0" fitWidth="100.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="14.0" >
+                              <ImageView fx:id="image_BurgerOleg" fitHeight="100.0" fitWidth="100.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="14.0">
                                <image>
                                    <Image url="@../res/OlegBurger.jpg" />
                                </image>
                                </ImageView>
-                               <Label layoutX="138.0" layoutY="56.0" text="Бургер &quot;Олежа&quot;" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="56.0" />
+                               <Label fx:id="label_BurgerOlegName" layoutX="138.0" layoutY="56.0" text="Бургер &quot;Олежа&quot;" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="56.0" />
                               <Label fx:id="label_BurgerOlegCount" layoutX="483.0" layoutY="56.0" text="0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="56.0" />
                               <Button fx:id="btn_BurgOlegDec" layoutX="288.0" layoutY="52.0" mnemonicParsing="false" onAction="#BurgOlegDec" text="-" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="52.0" />
                               <Button fx:id="btn_BurgOlegInc" layoutX="347.0" layoutY="52.0" mnemonicParsing="false" onAction="#BurgOlegInc" text="+" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="52.0" />
@@ -66,12 +66,12 @@
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <ImageView fx:id="image_Zezar" fitHeight="100.0" fitWidth="100.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0" >
+                              <ImageView fx:id="image_Zezar" fitHeight="100.0" fitWidth="100.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
                                <image>
                                    <Image url="@../res/cezar.jpg" />
                                </image>
                            </ImageView>
-                               <Label layoutX="147.0" layoutY="56.0" text="Салат Цезарь" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="55.0" />
+                               <Label fx:id="label_ZazerName" layoutX="147.0" layoutY="56.0" text="Салат Цезарь" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="55.0" />
                               <Label fx:id="label_ZazerCount" layoutX="514.0" layoutY="56.0" text="0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="55.0" />
                               <Button fx:id="btn_ZazerDec" layoutX="486.0" layoutY="52.0" mnemonicParsing="false" onAction="#ZazerDec" text="-" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="52.0" />
                               <Button fx:id="btn_ZazerInc" layoutX="534.0" layoutY="52.0" mnemonicParsing="false" onAction="#ZazerInc" text="+" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="52.0" />
